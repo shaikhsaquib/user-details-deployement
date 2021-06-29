@@ -1,0 +1,1 @@
+web: watress-serve --port=$PORT user_detail.wsgi:application
