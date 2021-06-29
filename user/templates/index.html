@@ -1,0 +1,48 @@
+<!-- {% block tittle %} register form {% endblock tittle %} -->
+{% load static %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="registerfrom">
+        <h1> Registration Form </h1>
+    </div>
+    <div name="main">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="under_over">
+                <div class="name">
+                    <label class="item" style="border-radius: 2%;font-family: sans-serif;color: bisque;" for="name">Name</label>
+                    <input class="item" style="border-radius:5px ;color: black;" required type="text" name="name" id="name">
+                    <label class="item" style for="D.O.B">D.O.B</label>
+                    <input class="item" style="border-radius:5px ; color: black; " required type="date" name="date" id="date">
+                    <label class="item" for="email">email</label>
+                    <input class="item" style="border-radius:5px ; color: black;" required type="email" name="email" id="email" placeholder="123@gmail.com">
+                    <label class="item" for="phon">phon number</label>
+                    <input class="item" style="border-radius:5px; color: black;" required type="tel" name="phon" id="phon" 
+                    placeholder="+91">
+                    <button type="submit" class="btn btn-outline-primary">submit</button>
+                    <button type="submit" class="btn btn-outline-primary"> 
+                       <a href="{% url 'display' %}">show Users </a>
+                    </button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+    
+</body>
+
+</html>
+{% endblock body %}
